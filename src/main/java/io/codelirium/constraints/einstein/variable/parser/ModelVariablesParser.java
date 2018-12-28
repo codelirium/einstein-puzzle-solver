@@ -13,6 +13,7 @@ import static com.google.common.collect.Lists.newLinkedList;
 import static com.google.common.collect.Maps.newHashMap;
 import static io.codelirium.constraints.einstein.entity.EnumEntities.reflect;
 import static java.util.Arrays.asList;
+import static java.util.Collections.shuffle;
 import static org.springframework.util.Assert.notNull;
 
 
@@ -34,7 +35,11 @@ public class ModelVariablesParser implements Parser<ModelVariablesDTO, Model> {
 
 			final List<String> labels = reflect(enumClazz);
 
-			final IntVar[] variablesByIndex = model.intVarArray(labels.size(), 0, labels.size() - 1);
+
+			shuffle(labels);
+
+
+			final IntVar[] variablesByIndex = model.intVarArray(enumClazz.getSimpleName(), labels.size(), 0, labels.size() - 1);
 
 			final Map<String, IntVar> variablesByLabel = newHashMap();
 

@@ -39,7 +39,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		notNull(entity, "The entity cannot be null.");
 
 
-		return locator.locate(variablesList, entity).get();
+		return locator.locate(variablesList, entity).orElseThrow(IllegalArgumentException::new);
 	}
 
 
@@ -59,7 +59,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar red  = locate(variablesList, RED.name());
 
 
-		model.post(brit.eq(red).decompose());
+		brit.eq(red).post();
 
 
 
@@ -70,7 +70,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar dog   = locate(variablesList, DOG.name());
 
 
-		model.post(swede.eq(dog).decompose());
+		swede.eq(dog).post();
 
 
 
@@ -81,7 +81,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar tea  = locate(variablesList, TEA.name());
 
 
-		model.post(dane.eq(tea).decompose());
+		dane.eq(tea).post();
 
 
 
@@ -92,7 +92,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar white = locate(variablesList, WHITE.name());
 
 
-		model.post(white.sub(green).eq(1).decompose());
+		white.sub(green).eq(1).post();
 
 
 
@@ -101,7 +101,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar coffee = locate(variablesList, COFFEE.name());
 
 
-		model.post(green.eq(coffee).decompose());
+		green.eq(coffee).post();
 
 
 
@@ -112,7 +112,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar bird     = locate(variablesList, BIRD.name());
 
 
-		model.post(pallMall.eq(bird).decompose());
+		pallMall.eq(bird).post();
 
 
 
@@ -123,7 +123,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar dunhill = locate(variablesList, DUNHILL.name());
 
 
-		model.post(yellow.eq(dunhill).decompose());
+		yellow.eq(dunhill).post();
 
 
 
@@ -132,7 +132,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar milk = locate(variablesList, MILK.name());
 
 
-		model.post(milk.eq(Drink.values().length / 2).decompose());
+		milk.eq(Drink.values().length / 2).post();
 
 
 
@@ -141,7 +141,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar norwegian = locate(variablesList, NORWEGIAN.name());
 
 
-		model.post(norwegian.eq(0).decompose());
+		norwegian.eq(0).post();
 
 
 
@@ -152,7 +152,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar cat    = locate(variablesList, CAT.name());
 
 
-		model.post(blends.sub(cat).abs().eq(1).decompose());
+		blends.sub(cat).abs().eq(1).post();
 
 
 
@@ -161,7 +161,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar horse = locate(variablesList, HORSE.name());
 
 
-		model.post(horse.sub(dunhill).abs().eq(2).decompose());
+		horse.sub(dunhill).abs().eq(1).post();
 
 
 
@@ -172,7 +172,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar beer       = locate(variablesList, BEER.name());
 
 
-		model.post(blueMaster.eq(beer).decompose());
+		blueMaster.eq(beer).post();
 
 
 
@@ -183,7 +183,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar prince = locate(variablesList, PRINCE.name());
 
 
-		model.post(german.eq(prince).decompose());
+		german.eq(prince).post();
 
 
 
@@ -192,7 +192,7 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar blue = locate(variablesList, BLUE.name());
 
 
-		model.post(norwegian.sub(blue).abs().eq(1).decompose());
+		norwegian.sub(blue).abs().eq(1).post();
 
 
 
@@ -201,6 +201,6 @@ public class HintEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		final IntVar water = locate(variablesList, WATER.name());
 
 
-		model.post(blends.sub(water).abs().eq(1).decompose());
+		blends.sub(water).abs().eq(1).post();
 	}
 }
