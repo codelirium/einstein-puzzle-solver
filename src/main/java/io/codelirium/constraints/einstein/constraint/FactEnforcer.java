@@ -19,6 +19,6 @@ public class FactEnforcer implements Enforcable<Model, ModelVariablesDTO> {
 		notNull(variablesList, "The list of variables cannot be null.");
 
 
-		variablesList.forEach(modelVariables -> model.allDifferent(modelVariables.getVariablesByIndex()));
+		variablesList.forEach(modelVariables -> model.allDifferent(modelVariables.getVariablesByIndex()).post());
 	}
 }

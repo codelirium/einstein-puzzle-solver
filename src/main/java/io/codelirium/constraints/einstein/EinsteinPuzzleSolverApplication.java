@@ -21,6 +21,7 @@ import static org.springframework.boot.Banner.Mode.OFF;
 @SpringBootApplication
 public class EinsteinPuzzleSolverApplication implements CommandLineRunner {
 
+
 	@Inject
 	private ModelVariablesParser parser;
 
@@ -42,6 +43,7 @@ public class EinsteinPuzzleSolverApplication implements CommandLineRunner {
 				.run(args);
 
 	}
+
 
 	@Override
 	public void run(final String ... args) throws Exception {
