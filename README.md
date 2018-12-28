@@ -1,13 +1,13 @@
-# einstein-riddle-solver
+# einstein-puzzle-solver
 
 Einstein wrote a riddle last century. He said that 98% of the world could not solve it.
 
    * There are 5 houses in five different colors.
    * In each house lives a person with a different nationality.
    * These five owners drink a certain type of beverage, smoke a certain brand of cigar and keep a certain pet.
-   *  No owners have the same pet, smoke the same brand of cigar or drink the same beverage.
+   * No owners have the same pet, smoke the same brand of cigar or drink the same beverage.
 
-The question is: Who owns the fish?
+The question is: <i>Who owns the fish?</i>
 
 ## Hints
 
@@ -20,7 +20,7 @@ The question is: Who owns the fish?
     7)  The owner of the yellow house smokes Dunhill.
     8)  The man living in the center house drinks milk.
     9)  The Norwegian lives in the first house.
-    10) The man who smokes blends lives next to the one who keeps cats.
+    10) The man who smokes Blends lives next to the one who keeps cats.
     11) The man who keeps horses lives next to the man who smokes Dunhill.
     12) The owner who smokes BlueMaster drinks beer.
     13) The German smokes Prince.
