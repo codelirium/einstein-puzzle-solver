@@ -81,14 +81,4 @@ public class EnumEntities {
 								.collect(toList());
 
 	}
-
-
-	public static String indexOf(final Class<? extends Enum<?>> enumClazz, final int index) {
-
-		notNull(enumClazz, "The enum class cannot be null.");
-
-
-		return reflect(enumClazz).get(index);
-
-	}
 }
